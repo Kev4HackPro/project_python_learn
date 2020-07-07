@@ -54,7 +54,7 @@ class DepositAccount(Account):
 
 class InvestmentAccount(Account):
     def __init__(self, account_number, account_holder, opening_balance, investment_type):
-        super().__init__(account_number, account_holder, opening_balance,'investment account')
+        super().__init__(account_number, account_holder, opening_balance, 'investment account')
         self.investment = investment_type
 
     def __str__(self):
