@@ -1,0 +1,7 @@
+status = bool(input('Ok to proceed: '))
+print(status)
+print(type(status))
+print(int(True))
+print(int(False))
+print(bool(1))
+print(bool(0))
