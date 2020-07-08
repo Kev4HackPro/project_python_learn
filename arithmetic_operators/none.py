@@ -9,6 +9,4 @@ print('winner:', winner)
 print('winner is None:', winner is None)
 print('winner is not None:', winner is not None)
 print(type(winner))
-winner = False
-print('winner', winner)
-print(type(winer))
+
