@@ -11,7 +11,10 @@ class Quantity:
         return Quantity(new_value)
 
     def __mul__(self, other):
-        new_value = self.value * other.value
+        if isinstance(other, int):
+            new_value = self.value * other
+        else:
+            new_value =self.value * other.value
         return Quantity(new_value)
 
     def __truediv__(self, other):
@@ -63,7 +66,7 @@ class Quantity:
 q1 = Quantity(5)
 q2 = Quantity(10)
 print('q1=', q1, ', q2=', q2)
-q3 = q1 // q2
+q3 = q1 * q2
 print('q3=', q3)
 print('q1 < q2: ', q1 < q2)
 print('q3 > q2: ', q3 > q2)
