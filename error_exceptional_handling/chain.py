@@ -11,7 +11,8 @@ def divide(x, y):
 
 
 def main():
-    divide(6, 9)
+    divide(6, 0)
 
 
-main()
+if __name__ == '__main__':
+    main()
