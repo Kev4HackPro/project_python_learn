@@ -33,5 +33,7 @@ class Distance:
 calc = Calculator()
 d1 = Distance(5)
 d2 = Distance(6)
+d3 = d1 + d2
 print(calc.add(d1, d2))
 print(calc.subtract(d1, d2))
+print('__add__:', d3)
