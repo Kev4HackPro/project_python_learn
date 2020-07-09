@@ -1,15 +1,23 @@
 class InvalidAgeException(Exception):
-    """Creating my own error and exception"""
+    """"Valid ages must be between 0 and 120"""
 
     def __init__(self, value):
         self.value = value
 
     def __str__(self):
-        return 'InvalidAgeException (' + str(self.value) + ')'
+        return f"Age entered must be between 0 and 120, you entered {self.value}"
 
 
 class Person:
+    instance_count = 0
+
+    @classmethod
+    def increment_instance_count(cls):
+        print('New instance created')
+        cls.instance_count += 1
+
     def __init__(self, name, age):
+        Person.increment_instance_count()
         self._name = name
         self._age = age
 
@@ -18,13 +26,11 @@ class Person:
         return self._age
 
     @age.setter
-    def age(self, value):
-        print('In set_age method (', value, ')')
-        if isinstance(value, int) and 0 < value < 120:
-            self._age = value
-
+    def age(self, new_age):
+        if isinstance(new_age, int) and 0 < new_age < 120:
+            self._age = new_age
         else:
-            raise InvalidAgeException(value)
+            raise InvalidAgeException(new_age)
 
     @property
     def name(self):
@@ -35,11 +41,13 @@ class Person:
         del self._name
 
     def __str__(self):
-        return f"{self._name} is {self._age} years old"
+        return f"Person[{self._name}] is {self._age}"
 
 
 try:
-    person = Person('Junior', 21)
-    person.age = -1
+    p = Person('James Kariuki', 67)
+    print(p)
+    p.age = 30
+    print(p)
 except InvalidAgeException as e:
     print(e)

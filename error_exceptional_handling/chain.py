@@ -5,8 +5,13 @@ class DivideByYWhenZeroException(Exception):
 def divide(x, y):
     try:
         result = x / y
+        return result
     except Exception as e:
         raise DivideByYWhenZeroException from e
 
 
-divide(6, 4)
+def main():
+    divide(6, 9)
+
+
+main()
