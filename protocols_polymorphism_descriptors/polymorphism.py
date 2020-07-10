@@ -29,10 +29,10 @@ class Dog:
     def sleep(self): print('Dog - Sleep')
 
 
-def night_out(p):
-    p.eat()
-    p.drink()
-    p.sleep()
+def night_out(q):
+    q.eat()
+    q.drink()
+    q.sleep()
 
 
 # Create instance sof each type
