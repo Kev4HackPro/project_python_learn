@@ -1,4 +1,16 @@
 from abc import ABCMeta
+from timeit import default_timer
+
+
+def timer(func):
+    def inner(self, value):
+        print('calling ', func.__name__, 'on', self, 'with', value)
+        start = default_timer()
+        func(self, value)
+        end = default_timer()
+        print('returned from ', func.__name__, 'it took', end, 'seconds')
+
+    return inner
 
 
 class BalanceError(Exception):
@@ -32,12 +44,18 @@ class Account(metaclass=ABCMeta):
         self._open_bal = open_bal
         self.acc_type = acc_type
 
+    def __getattr__(self, attribute):
+        print('__getattr__: unknown attribute accessed - ', attribute)
+        return -1
+
+    @timer
     def deposit(self, amount):
         if amount < 0:
             raise AmountError(account=self, msg='You cannot deposit negative amounts')
         else:
             self._open_bal += amount
 
+    @timer
     def withdraw(self, amount):
         if amount < 0:
             raise AmountError(self, 'Cannot withdraw negative amount')
@@ -60,6 +78,7 @@ class CurrentAccount(Account):
         super().__init__(acc_no, acc_hold, open_bal, 'current')
         self.ovdrft = -ovdrft_lmt
 
+    @timer
     def withdraw(self, amount):
         if amount < 0:
             raise AmountError(self, 'Cannot withdraw negative amounts')

@@ -21,7 +21,7 @@ except BalanceError as e:
     print(e)
 
 try:
-    customer1.deposit(100)
+    customer1.branch(100)
     print(customer1.balance)
 except AmountError as e:
     print(e)
