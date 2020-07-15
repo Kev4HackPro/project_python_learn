@@ -25,5 +25,5 @@ try:
     print(customer1.balance)
 except AmountError as e:
     print(e)
-except AttributeError as exp:
-    print(exp)
+except AttributeError as ae:
+    print(ae)

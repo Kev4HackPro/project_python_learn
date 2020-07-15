@@ -44,9 +44,9 @@ class Account(metaclass=ABCMeta):
         self._open_bal = open_bal
         self.acc_type = acc_type
 
-    def __getattr__(self, attribute):
-        print('__getattr__: unknown attribute accessed - ', attribute)
-        return -1
+    # def __getattr__(self, attribute):
+    #     print('__getattr__: unknown attribute accessed - ', attribute)
+    #     return -1
 
     @timer
     def deposit(self, amount):
