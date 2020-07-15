@@ -1,6 +1,6 @@
 from abstract_base_class.fintech.account_abstract import *
 
-customer1 = CurrentAccount('12345', 'James Kariuki', 85670, 500000)
+customer1 = CurrentAccount('12345', 'James Kariuki Karanja', 85670, 500000)
 print(customer1)
 customer2 = InvestmentsAccount('47894', 'Wayne Makau', 45678, 'risky')
 print(customer2)
