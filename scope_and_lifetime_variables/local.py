@@ -8,12 +8,12 @@ a_variable = 56  # Global
 my_function()
 print(a_variable)
 
-maxi = 25
+maxi = 35
 
 
 def print_max():
     global maxi
-    maxi = maxi + 1
+    maxi = maxi + 10
     print(maxi)
 
 
