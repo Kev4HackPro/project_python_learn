@@ -7,5 +7,9 @@ while guess_count < guess_limit:
     guess_count += 1
     if guess == secret_number:
         print('Hurray you won')
+        break
+else:
+    print(f'You failed. Number to guess was {secret_number}')
+
 
 
