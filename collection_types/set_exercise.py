@@ -1,0 +1,17 @@
+exam = {'Andy', 'Kavita', 'Su', 'Fumito', 'Yussuf', 'Odhiambo'}
+project = {'Dave', 'Angie', 'Su', 'Rukia', 'Odhiambo'}
+print('Students who submitted a project and did the exams')
+print(exam.intersection(project))
+print('.' * 50)
+print('Students who took only the exam')
+print(exam.difference(project))
+print('.' * 50)
+print('Students who only submitted the project ')
+print(project.difference(exam))
+print('.' * 50)
+print('Students who took either a project or an exam or both')
+print(exam.union(project))
+print('.' * 50)
+print('Students who either took an exam or project')
+print(exam.symmetric_difference(project))
+print('.' * 50)
