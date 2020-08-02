@@ -52,3 +52,5 @@ print(names)
 print(names.index('Jidenna'))  # returns index of the element specified
 names.clear()
 print(names)  # returns an empty list
+college_years = ['1st Year', '2nd Year', '3rd Year', '4th Year']
+print(list(enumerate(college_years, 2018)))
