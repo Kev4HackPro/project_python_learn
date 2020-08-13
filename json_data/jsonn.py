@@ -39,5 +39,5 @@ json_string = """
 }
      """
 
-data = json.loads(json_string)
+#data = json.loads(json_string)
 print(data)
